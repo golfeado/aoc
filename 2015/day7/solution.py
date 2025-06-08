@@ -138,10 +138,6 @@ def parse_operations(los: list[str]) -> Operations:
     return [parse_operation(s) for s in los]
 
 
-# The use of the remove() method on the ops list makes this function always
-# works over O(n2), as it has to iterate over the list itself to look for the
-# element to delete.  Adding hashing capabilities to the Operation class and
-# using a set instead of a list may remove some overhead.
 def get_wires(ops: Operations, part_two: bool = False) -> Wires:
     """Returns a Wires dictionary made following and looping through an
     Operation list"""
